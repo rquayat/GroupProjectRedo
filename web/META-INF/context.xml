@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/s18-bookmarks"/>
+<Context path="/JdbcRealmSecurity">
+    
+    <Realm className="org.apache.catalina.realm.JDBCRealm" 
+           connectionName="mcolbert" connectionPassword="Friday29" 
+           connectionURL="jdbc:oracle:thin:@biz-delphi.cloudapp.net:1521:Delphi" 
+           debug="99" driverName="oracle.jdbc.OracleDriver" 
+           userTable="bookmarks_siteusers" userCredCol="passwd" userNameCol="email" 
+           userRoleTable="bookmarks_usersinroles" roleNameCol="rolename" />
+    
+</Context>

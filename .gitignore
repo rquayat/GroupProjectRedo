@@ -1,3 +1,4 @@
 /dist/
 dbConn.properties
-
+context.xml
+/build/
