@@ -17,12 +17,12 @@ bookmark_id number(38) NOT NULL,
 page_name varchar2(255) NOT NULL,
 url varchar2(255) NOT NULL,
 username varchar2(125) NOT NULL,
-category varchar2(125),
-description varchar2(255),
+cat number(38),
+note varchar2(255),
 date_saved timestamp(6),
 date_modified timestamp(6),
-CONSTRAINT pk_bookmark_id PRIMARY KEY(bookmark_id)
-CONSTRAINT fk_bookmarks_category FOREIGN KEY (category) REFERENCES bookmarks_categories (cat_name)
+CONSTRAINT pk_bookmark_id PRIMARY KEY(bookmark_id),
+CONSTRAINT fk_bookmarks_category FOREIGN KEY (cat) REFERENCES bookmarks_categories (cat_id)
 );
 
 CREATE sequence bookmarks_seq start with 1
