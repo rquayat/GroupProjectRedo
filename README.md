@@ -37,13 +37,13 @@ BEGIN
 END;
 
 INSERT INTO bookmarks (page_name, url, username, category, description, date_saved, date_modified)
-VALUES ('Google', 'https://google.com', 'mike@mike.com', 'utilities', 'The Google home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+VALUES ('Google', 'https://google.com', 'mike@mike.com', '1', 'The Google home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO bookmarks (page_name, url, username, category, description, date_saved, date_modified)
-VALUES ('ESPN', 'https://espn.com', 'test@test.com', 'news', 'The ESPN home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+VALUES ('ESPN', 'https://espn.com', 'test@test.com', '2', 'The ESPN home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO bookmarks (page_name, url, username, category, description, date_saved, date_modified)
-VALUES ('Facebook', 'https://facebook.com', 'mike@mike.com', 'social media', 'Facebook's home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+VALUES ('Facebook', 'https://facebook.com', 'mike@mike.com', '3', 'Facebook's home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO bookmarks (page_name, url, username, category, description, date_saved, date_modified)
-VALUES ('Twitter', 'https://twitter.com', 'test@test.com', 'social media', 'Twitter's home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+VALUES ('Twitter', 'https://twitter.com', 'test@test.com', '3', 'Twitter's home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 SELECT * FROM bookmarks;
 ```
