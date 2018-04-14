@@ -36,14 +36,10 @@ BEGIN
     :new.bookmark_id := bookmarks_seq.NEXTVAL;
 END;
 
-INSERT INTO bookmarks (page_name, url, username, category, description, date_saved, date_modified)
-VALUES ('Google', 'https://google.com', 'mike@mike.com', '1', 'The Google home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO bookmarks (page_name, url, username, category, description, date_saved, date_modified)
-VALUES ('ESPN', 'https://espn.com', 'test@test.com', '2', 'The ESPN home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO bookmarks (page_name, url, username, category, description, date_saved, date_modified)
-VALUES ('Facebook', 'https://facebook.com', 'mike@mike.com', '3', 'Facebook's home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO bookmarks (page_name, url, username, category, description, date_saved, date_modified)
-VALUES ('Twitter', 'https://twitter.com', 'test@test.com', '3', 'Twitter's home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO bookmarks (page_name, url, username, cat, note, date_saved, date_modified) VALUES ('Google', 'https://google.com', 'mike@mike.com', '1', 'The Google home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO bookmarks (page_name, url, username, cat, note, date_saved, date_modified) VALUES ('ESPN', 'https://espn.com', 'test@test.com', '2', 'The ESPN home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO bookmarks (page_name, url, username, cat, note, date_saved, date_modified) VALUES ('Facebook', 'https://facebook.com', 'mike@mike.com', '3', 'Facebooks home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO bookmarks (page_name, url, username, cat, note, date_saved, date_modified) VALUES ('Twitter', 'https://twitter.com', 'test@test.com', '3', 'Twitters home page.', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 SELECT * FROM bookmarks;
 ```
