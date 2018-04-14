@@ -65,7 +65,7 @@ CREATE OR REPLACE TRIGGER bookmarks_categories_trigger
 BEFORE INSERT ON bookmarks_categories
 FOR EACH ROW
 BEGIN
-    :new.catk_id := bookmarks_categories_seq.NEXTVAL;
+    :new.cat_id := bookmarks_categories_seq.NEXTVAL;
 END;
 
 INSERT INTO bookmarks_categories (cat_name) VALUES ('utiliities');
