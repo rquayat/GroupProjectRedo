@@ -23,11 +23,12 @@
         <a href="${pageContext.request.contextPath}/auth/logout.jsp">Logout</a>
        
         
-        <h1>Hello Admin!</h1> <h3><%= username %></h3>
+        <h1>Hello Admin!</h1> <h3><%= username %></h3> x
         
         <h5> Admin Functionality </h5><hr>
-        
-        
+        <a href="${pageContext.request.contextPath}/admin/usermanager">User Manager</a>
+        <br>
+        <a href="${pageContext.request.contextPath}/admin/readAllBooks">View Everyone's Books</a>
         
         <br>
         <br>
