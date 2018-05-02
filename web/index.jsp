@@ -7,7 +7,7 @@
     </head>
     <body>
         
-        <h1>Mike's Bookmarks Application</h1>
+        <h1>Group 1's Asset Organizer</h1>
         <a href="./user/">User Login</a>
         <p>
         To test authenticated user functionality, login as test@test.com with 'password' (no quotes). This user can see their own books
