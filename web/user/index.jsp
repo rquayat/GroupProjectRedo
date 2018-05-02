@@ -11,6 +11,10 @@
         <br>
         <h1>My Bookmarks</h1>
         
+        <a href="read"> View All Assets</a>
+        <br> <br>
+        <a href="search"> Search Assets</a>
+        
         
         
        
