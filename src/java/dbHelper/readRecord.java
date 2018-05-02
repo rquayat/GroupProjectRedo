@@ -61,7 +61,7 @@ public class readRecord {
     
 }
     
-    public void doRead() {
+    public void doReadServlet() {
     
         PreparedStatement ps = null;
         try {

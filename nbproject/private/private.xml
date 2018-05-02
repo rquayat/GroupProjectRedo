@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/H:/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/web/admin/updateUser.jsp</file>
-            <file>file:/H:/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/web/admin/userManager.jsp</file>
-            <file>file:/H:/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/web/user/index.jsp</file>
-            <file>file:/H:/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/src/java/controller/Admin_UsrMgr_ListUsersServlet.java</file>
-            <file>file:/H:/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/web/WEB-INF/web.xml</file>
-            <file>file:/H:/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/src/java/dbHelper/dbConn.properties</file>
-            <file>file:/H:/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/web/admin/index.jsp</file>
+            <file>file://home.iowa.uiowa.edu/rquayat/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/src/java/model/Assets.java</file>
+            <file>file://home.iowa.uiowa.edu/rquayat/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/src/java/dbHelper/readQuery.java</file>
+            <file>file://home.iowa.uiowa.edu/rquayat/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/src/java/controller/readServlet.java</file>
+            <file>file://home.iowa.uiowa.edu/rquayat/SoftwareDevelopment/GroupProject/AssetApplication/AssetApplication/s18-bookmarks/web/user/read.jsp</file>
         </group>
     </open-files>
 </project-private>
