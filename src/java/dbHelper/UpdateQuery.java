@@ -55,12 +55,15 @@ public class UpdateQuery {
     
     public void doUpdate (Assets asset) {
         try {
-            String query = "UPDATE assets SET category = ?, name=?, value=?, dateofpurchase=?";
+            String query = "UPDATE assets SET category = ?, name=?, value=?, dateofpurchase=? WHERE assetid =?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, asset.getCategory());
             ps.setString(2, asset.getName());
             ps.setString(3, asset.getValue());
             ps.setString(4, asset.getDateOfPurchase());
+            ps.setInt(5, asset.getAssetId());
+            
+            ps.executeUpdate();
             
         } catch (SQLException ex) {
             Logger.getLogger(UpdateQuery.class.getName()).log(Level.SEVERE, null, ex);

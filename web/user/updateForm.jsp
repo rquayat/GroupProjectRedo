@@ -2,7 +2,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.Assets"%>
-<%Assets asset = (Assets) request.getAttribute("asset"); %>
+<%Assets asset = (Assets) request.getAttribute("myAsset"); %>
 
 <!DOCTYPE html>
 <html>
@@ -14,27 +14,31 @@
     <body>
         <h1>Update an Asset</h1>
         
-        <form name="updateForm" action="update" method="get">
+        <form name="updateForm" action="updateRecord" method="post">
             <table class="table">
                 <br>
                 <tr> 
+                    <td> Asset Id: </td>
+                    <td><input type="text" name="assetid" value="<%= asset.getAssetId() %>" readonly > </td>
+                </tr>
+                <tr> 
                     <td> Category: </td>
-                    <td><input type="text" name="category" value="<% asset.getCategory(); %>" > </td>
+                    <td><input type="text" name="category" value="<%= asset.getCategory() %>" > </td>
                 </tr>
             <br>
                 <tr> 
                     <td> Name: </td>
-                    <td><input type="text" name="name" value="<% asset.getName(); %>" > </td>
+                    <td><input type="text" name="name" value="<%= asset.getName() %>" > </td>
                 </tr>           
             <br>
             <tr> 
                     <td> Value: </td>
-                    <td><input type="text" name="value" value="<% asset.getValue(); %>" > </td>
+                    <td><input type="text" name="value" value="<%= asset.getValue() %>" > </td>
                 </tr>           
             <br>
             <tr> 
                     <td> Date of Purchase: </td>
-                    <td><input type="text" name="dateofpurchase" value="<% asset.getDateOfPurchase(); %>" > </td>
+                    <td><input type="text" name="dateofpurchase" value="<%= asset.getDateOfPurchase() %>" > </td>
                 </tr>           
             <br>
             

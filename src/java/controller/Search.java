@@ -86,7 +86,7 @@ public class Search extends HttpServlet {
         
         //Pass execttion control to read.jsp along with the table
         request.setAttribute("table", table);
-        String url = "/user/read.jsp";
+        String url = "/user/searchResults.jsp";
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);

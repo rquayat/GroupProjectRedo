@@ -8,6 +8,7 @@ package controller;
 import dbHelper.UpdateQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,7 @@ import model.Assets;
  *
  * @author rquayat
  */
-@WebServlet(name = "UpdateServlet", urlPatterns = {"/updateasset"})
+@WebServlet(name = "UpdateServlet", urlPatterns = {"/user/updateRecord"})
 public class UpdateServlet extends HttpServlet {
 
     /**
@@ -80,7 +81,7 @@ public class UpdateServlet extends HttpServlet {
         String Category = request.getParameter("category");
         String Name = request.getParameter("name");
         String Value = request.getParameter("value");
-        String DateOfPurchase = request.getParameter("dateopurchase");
+        String DateOfPurchase = request.getParameter("dateofpurchase");
         
         
         Assets asset = new Assets();
@@ -96,7 +97,10 @@ public class UpdateServlet extends HttpServlet {
     uq.doUpdate(asset);
     
     //pass control to the ReadServlet
-    String url = "/user/read.jsp";
+    String url = "/user/read";
+    
+     RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+        dispatcher.forward(request, response);  
         
                 
         

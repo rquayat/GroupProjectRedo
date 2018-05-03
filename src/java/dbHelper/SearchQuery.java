@@ -51,16 +51,13 @@ public class SearchQuery {
         }
     }
     
-    public void doSearch(String Category) {
-        try {
-            String query = "SELECT * FROM assets WHERE UPPER(category) LIKE ? ORDER BY assetid ASC";
+    public void doSearch(String Category) throws SQLException {
+        String query = "SELECT * FROM assets WHERE category =? ORDER BY assetid ASC";
             
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, "%" + Category + "%");
+            ps.setString(1, Category);
             this.results = ps.executeQuery();
-        } catch (SQLException ex) {
-            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
-        }
+          
     }
     
     public String getHTMLTable() {
@@ -102,7 +99,7 @@ public class SearchQuery {
                 table += "</td>";
                 
            
-                table += "<td class='.td'>";
+                table += "<td class>";
                 table += "<a href=update?assetid=" + asset.getAssetId() + "> Update </a>" + "<a href=delete?assetid=" + asset.getAssetId() + "> Delete <a/>";
                 table += "</td>";
                 table += "</tr>";

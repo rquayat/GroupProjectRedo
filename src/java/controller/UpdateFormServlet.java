@@ -8,6 +8,9 @@ package controller;
 import dbHelper.readRecord;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -78,22 +81,28 @@ public class UpdateFormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //get lead_id
-        int AssetId = Integer.parseInt(request.getParameter("assetid"));
-        
-        //create a ReadRecord class
-        readRecord rr = new readRecord(AssetId);
-        
-        //use ReadRecord to get the lead data
-        rr.doReadServlet();
-        Assets asset = rr.getAsset();
-        //pass friend and conrtrol to updateForm.jsp
-        request.setAttribute("assetid", asset);
-        
-        String url = "/user/updateForm.jsp";
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        try {
+            //get lead_id
+            int AssetId = Integer.parseInt(request.getParameter("assetid"));
+            
+            //create a ReadRecord class
+            readRecord rr = new readRecord(AssetId);
+            
+            //use ReadRecord to get the lead data
+            rr.doRead();
+            Assets asset = rr.getAsset();
+            //pass friend and conrtrol to updateForm.jsp
+            request.setAttribute("myAsset", asset);
+            
+            String url = "/user/updateForm.jsp";
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UpdateFormServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(UpdateFormServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         
         
