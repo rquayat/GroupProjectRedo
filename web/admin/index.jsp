@@ -23,6 +23,7 @@
         <br>
         <br>
         <h5> User Functionality </h5><hr>
+        <a href="read"> View All Assets</a>
         
     </body>
 </html>

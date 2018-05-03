@@ -14,12 +14,8 @@
     <body>
         <h1>Update an Asset</h1>
         
-        <form name="updateForm" action="updateasset" method="get">
+        <form name="updateForm" action="update" method="get">
             <table class="table">
-                <tr> 
-                    <td> Asset Id: </td>
-                    <td><input type="text" name="assetid" value="<% asset.getAssetId(); %>" > </td>
-                </tr>          
                 <br>
                 <tr> 
                     <td> Category: </td>
@@ -45,7 +41,7 @@
             </table>
             <br>
             <input type="reset" name="reset" value="Clear" />
-            <input type="submit" name="UpdateFormServlet" value="Update" />
+            <input type="submit" name="updateasset" value="Update" />
             <br>
         </form>
     </body>

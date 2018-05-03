@@ -19,7 +19,7 @@ import model.Assets;
  *
  * @author rquayat
  */
-@WebServlet(name = "UpdateServlet", urlPatterns = {"/update"})
+@WebServlet(name = "UpdateServlet", urlPatterns = {"/updateasset"})
 public class UpdateServlet extends HttpServlet {
 
     /**

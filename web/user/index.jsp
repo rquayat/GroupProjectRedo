@@ -13,7 +13,7 @@
         
         <a href="read"> View All Assets</a>
         <br> <br>
-        <a href="search"> Search Assets</a>
+        <a href="./search.jsp"> Search Assets by Category</a>
         
         
         

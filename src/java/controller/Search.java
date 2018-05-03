@@ -5,7 +5,7 @@
  */
 package controller;
 
-import dbHelper.readRecord;
+import dbHelper.SearchQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,15 +14,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Assets;
-
 
 /**
  *
  * @author rquayat
  */
-@WebServlet(name = "UpdateFormServlet", urlPatterns = {"/user/update"})
-public class UpdateFormServlet extends HttpServlet {
+@WebServlet(name = "Search", urlPatterns = {"/user/search"})
+public class Search extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +39,10 @@ public class UpdateFormServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet UpdateFormServlet</title>");            
+            out.println("<title>Servlet SearchServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet UpdateFormServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SearchServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,9 +60,7 @@ public class UpdateFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Pass execution on to doPost
         doPost (request, response);
-        
     }
 
     /**
@@ -78,24 +74,22 @@ public class UpdateFormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //get lead_id
-        int AssetId = Integer.parseInt(request.getParameter("assetid"));
+        //Get text to search
+        String Category = request.getParameter("searchVal");
         
-        //create a ReadRecord class
-        readRecord rr = new readRecord(AssetId);
+        //Create a SearchQuery helper object
+        SearchQuery sq = new SearchQuery();
         
-        //use ReadRecord to get the lead data
-        rr.doReadServlet();
-        Assets asset = rr.getAsset();
-        //pass friend and conrtrol to updateForm.jsp
-        request.setAttribute("assetid", asset);
+        //Get the HTML table from the SearchQuery object
+        sq.doSearch(Category);
+        String table = sq.getHTMLtable();
         
-        String url = "/user/updateForm.jsp";
+        //Pass execttion control to read.jsp along with the table
+        request.setAttribute("table", table);
+        String url = "/user/read.jsp";
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
-        
-        
         
     }
 
@@ -110,4 +104,3 @@ public class UpdateFormServlet extends HttpServlet {
     }// </editor-fold>
 
 }
-

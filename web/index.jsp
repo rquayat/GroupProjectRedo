@@ -3,24 +3,30 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Bookmarks Application</title>
+        <link rel="stylesheet" type="text/css" href="./WEB-INF/G1CSS.css">
+        <title>Group 3 Final</title>
     </head>
-    <body>
+    <div class="header"> 
+    
+    
+    <div class="headerText">
+        <h1> Asset Organizer </h1>
+    </div>
+    
+    <br clear="all">
+    
+</div> 
+    <body class="body">
         
         <h1>Group 1's Asset Organizer</h1>
+        <h2>Login currently down, proceed by selecting role</h2>
         <a href="./user/">User Login</a>
-        <p>
-        To test authenticated user functionality, login as test@test.com with 'password' (no quotes). This user can see their own books
-        add new books to their list, delete books from their list, and update their books.
-        </p>
+        
 
         <br>
         
         <a href="./admin/">Admin Login</a>
-        <p>
-        To test admin functionality, login as mike@mike.com with 'password' (no quotes). This account can see everyone's books, view all users
-        add new users, delete users, and update users.
-        </p>
+        
        
         <hr>
         <p>If web.xml is missing:
@@ -31,4 +37,5 @@
         </ul>
         </p>
     </body>
+    
 </html>
