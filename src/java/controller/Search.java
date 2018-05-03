@@ -8,6 +8,9 @@ package controller;
 import dbHelper.SearchQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -74,22 +77,26 @@ public class Search extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Get text to search
-        String Category = request.getParameter("searchVal");
-        
-        //Create a SearchQuery helper object
-        SearchQuery sq = new SearchQuery();
-        
-        //Get the HTML table from the SearchQuery object
-        sq.doSearch(Category);
-        String table = sq.getHTMLtable();
-        
-        //Pass execttion control to read.jsp along with the table
-        request.setAttribute("table", table);
-        String url = "/user/searchResults.jsp";
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        try {
+            //Get text to search
+            String Category = request.getParameter("searchVal");
+            
+            //Create a SearchQuery helper object
+            SearchQuery sq = new SearchQuery();
+            
+            //Get the HTML table from the SearchQuery object
+            sq.doSearch(Category);
+            String table = sq.getHTMLTable();
+            
+            //Pass execttion control to read.jsp along with the table
+            request.setAttribute("table", table);
+            String url = "/user/searchResults.jsp";
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 

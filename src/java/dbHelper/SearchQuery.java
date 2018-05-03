@@ -52,10 +52,10 @@ public class SearchQuery {
     }
     
     public void doSearch(String Category) throws SQLException {
-        String query = "SELECT * FROM assets WHERE category =? ORDER BY assetid ASC";
+        String query = "SELECT * FROM assets WHERE UPPER (category) LIKE ? ORDER BY assetid ASC";
             
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, Category);
+            ps.setString(1, "%" + Category.toUpperCase() + "%" );
             this.results = ps.executeQuery();
           
     }
@@ -114,8 +114,7 @@ public class SearchQuery {
      
     }
 
-    public String getHTMLtable() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    
 }
 
